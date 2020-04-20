@@ -4,6 +4,8 @@ const hbs = require('hbs')
 
 const app = express()
 // Require geocode and forecast into app.js
+const port = process.env.PORT || 3000
+
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
@@ -102,6 +104,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port .' + port)
 })
