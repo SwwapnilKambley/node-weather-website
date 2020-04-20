@@ -40,7 +40,7 @@ app.get('/about', (req, res) => {
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        helpText: 'This is some helpful text.',
+        helpText: 'For any suuggestions and updates mail me at swwapnilkambley24@gmail.com.',
         title: 'Help',
         name: 'Swwapnil Kambley'
     })
@@ -73,20 +73,6 @@ app.get('/weather', (req, res) => {
     
 })
 
-app.get('/products', (req,res) => {
-
-    if (!req.query.search) {
-        return res.send({
-            error: 'You must provide a search term'
-        })
-
-    }
-    console.log(req.query)
-
-    res.send({
-        products: []
-    })
-})
 
 app.get('/help/*', (req, res) => {
     res.render('404', {
